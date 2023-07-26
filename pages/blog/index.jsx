@@ -10,7 +10,7 @@ export default function Post({ data }) {
         <div>
             <Head>
                 <title>Blog</title>
-                <meta name="description" content="Read our blog posts" />
+                <meta name="description" content="Read blog posts" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <section className="text-gray-600 body-font overflow-hidden">

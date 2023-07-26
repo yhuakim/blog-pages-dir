@@ -72,8 +72,6 @@ const postQuery = groq`
     _id,
     title,
     body,
-    excerpt,
-    mainImage,
     "slug": slug.current
   }
 `;
@@ -85,22 +83,7 @@ export async function getStaticPaths() {
 
     const firstPost = paths[0];
 
-    /* 
-    console.log(paths); 
-    -----------------------------
-    [
-    'large-sites-with-odb',
-    'jamstack-for-enterprise-applications',
-    'next-on-netlify',
-    'dynamic-jamstack-sites-in-2021',
-    'modern-faster-netlify-functions',
-    'deep-dive-into-the-vue-composition-api-s-watch-method',
-    'how-to-rollback-a-deploy-in-2-seconds-on-netlify'
-  ]
-    */
-
     return {
-        // paths: paths.map((slug) => ({ params: { slug } })),
         paths: [{ params: { slug: firstPost } }],
         fallback: true,
     };
