@@ -59,7 +59,7 @@ export default function ReadPost({ data }) {
             </div>
 
             <div className="ml-5 mb-4">
-                <Link href={"/blog"} className="bg-teal-500 dark:text-gray-100 p-2 rounded-md shadow-md">
+                <Link href={"/"} className="bg-teal-500 dark:text-gray-100 p-2 rounded-md shadow-md">
                     Go Home
                 </Link>
             </div>
