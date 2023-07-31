@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { groq } from "next-sanity";
-import { client } from "../lib/sanityClient";
+import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "@/lib/sanityImageUrl";
+import { urlForImage } from "@/sanity/lib/image";
 
 
 export default function Post({ data }) {
@@ -35,12 +35,11 @@ export default function Post({ data }) {
                     </span>
                     <div className="hidden md:block md:w-48">
                       {blogpost.mainImage && (
-                        <Image src={urlFor(blogpost.mainImage).url()}
+                        <Image src={urlForImage(blogpost.mainImage).url()}
                           alt="Image"
                           className=""
                           width={300}
-                          height={300}
-                          layout="intrinsic" />
+                          height={300} />
                       )}
                     </div>
                   </div>

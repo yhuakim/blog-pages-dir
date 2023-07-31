@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
-import { client } from "../../lib/sanityClient";
+import { client } from "@/sanity/lib/client";
 import { useRouter } from "next/router";
-import { urlFor } from "@/lib/sanityImageUrl";
+import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default function ReadPost({ data }) {
         types: {
             image: ({ value }) => (
                 <Image
-                    src={urlFor(value).url()}
+                    src={urlForImage(value).url()}
                     alt="Image"
                     className="rounded-lg"
                     width={800}
@@ -28,7 +28,7 @@ export default function ReadPost({ data }) {
     };
 
     return (
-        <div className="h-auto xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 p-3">
+        <div className="h-auto xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 p-5">
             <header className="pt-6 xl:pb-6">
                 <div className="space-y-1 text-center"><div>
                     <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
@@ -49,7 +49,7 @@ export default function ReadPost({ data }) {
                 </div>
             </div>
 
-            <div className="ml-5 mb-4">
+            <div className="mb-4">
                 <Link href={"/"} className="bg-teal-500 text-gray-100 dark:text-gray-100 p-2 rounded-md shadow-md">
                     Go Home
                 </Link>
