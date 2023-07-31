@@ -2,6 +2,8 @@ import Head from "next/head";
 import { groq } from "next-sanity";
 import { client } from "../lib/sanityClient";
 import Link from "next/link";
+import Image from "next/image";
+import { urlFor } from "@/lib/sanityImageUrl";
 
 
 export default function Post({ data }) {
@@ -14,7 +16,12 @@ export default function Post({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="text-gray-600 body-font overflow-hidden">
-        <div className="container px-5 py-24 mx-auto">
+        <header className="p-3">
+          <h1 className="text-gray-900 text-4xl font-bold capitalize pt-3 dark:text-gray-100">
+            Welcome to my Blog Page
+          </h1>
+        </header>
+        <div className="container px-5 py-5 mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-100">
             {post.map((blogpost) => (
               <div key={blogpost.slug.current}>
@@ -26,6 +33,16 @@ export default function Post({ data }) {
                     <span className="mt-1 text-gray-500 text-sm">
                       {new Date(blogpost._createdAt).toISOString().split('T')[0]}
                     </span>
+                    <div className="hidden md:block md:w-48">
+                      {blogpost.mainImage && (
+                        <Image src={urlFor(blogpost.mainImage).url()}
+                          alt="Image"
+                          className=""
+                          width={300}
+                          height={300}
+                          layout="intrinsic" />
+                      )}
+                    </div>
                   </div>
                   <div className="md:flex-grow">
                     <h2 className="text-2xl font-medium text-gray-900 title-font mb-2 dark:text-gray-100">

@@ -28,22 +28,13 @@ export default function ReadPost({ data }) {
     };
 
     return (
-        <div className="h-auto xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 dark:bg-gray-800 p-3">
+        <div className="h-auto xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 p-3">
             <header className="pt-6 xl:pb-6">
-                <div className="space-y-1 text-center">
-                    <div className="space-y-10">
-                        <div>
-                            {/* <p className="text-base font-medium leading-6 text-teal-500">
-                                {new Date(post._createdAt).toISOString().split("T")[0]}
-                            </p> */}
-                        </div>
-                    </div>
-
-                    <div>
-                        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-                            {post.title}
-                        </h1>
-                    </div>
+                <div className="space-y-1 text-center"><div>
+                    <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+                        {post.title}
+                    </h1>
+                </div>
                 </div>
             </header>
 
@@ -59,7 +50,7 @@ export default function ReadPost({ data }) {
             </div>
 
             <div className="ml-5 mb-4">
-                <Link href={"/"} className="bg-teal-500 dark:text-gray-100 p-2 rounded-md shadow-md">
+                <Link href={"/"} className="bg-teal-500 text-gray-100 dark:text-gray-100 p-2 rounded-md shadow-md">
                     Go Home
                 </Link>
             </div>
